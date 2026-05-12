@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PrimeLife Care Group LLC – Compassionate In-Home Care</title>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1a2332;overflow-x:hidden}
+:root{
+  --navy:#0d1f3c;
+  --blue:#1a5fa8;
+  --blue-light:#e8f2fc;
+  --teal:#0e8f7a;
+  --teal-light:#e0f5f1;
+  --mint:#d4f0eb;
+  --sage:#6db89f;
+  --white:#ffffff;
+  --gray-50:#f8fafc;
+  --gray-100:#f1f5f9;
+  --gray-200:#e2e8f0;
+  --gray-300:#cbd5e1;
+  --gray-400:#94a3b8;
+  --gray-600:#475569;
+  --gray-800:#1e293b;
+  --accent:#f59e0b;
+}
+.serif{font-family:'DM Serif Display',serif}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;padding:14px 28px;border-radius:50px;font-weight:600;font-size:15px;cursor:pointer;border:none;transition:all .25s;text-decoration:none;letter-spacing:.01em}
+.btn-primary:hover{background:#0a7a68;transform:translateY(-2px);box-shadow:0 8px 24px rgba(14,143,122,.3)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--navy);padding:14px 28px;border-radius:50px;font-weight:600;font-size:15px;cursor:pointer;border:2px solid var(--gray-200);transition:all .25s;text-decoration:none}
+.btn-outline:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-light)}
+.section-label{display:inline-flex;align-items:center;gap:6px;background:var(--teal-light);color:var(--teal);font-size:13px;font-weight:600;padding:6px 14px;border-radius:50px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-100);padding:0 5%;height:72px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:38px;height:38px;background:linear-gradient(135deg,var(--teal),var(--blue));border-radius:10px;display:flex;align-items:center;justify-content:center}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{color:var(--gray-600);font-size:14px;font-weight:500;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--teal)}
+.card{background:#fff;border-radius:20px;border:1px solid var(--gray-100);box-shadow:0 2px 16px rgba(0,0,0,.04);transition:all .25s}
+.card:hover{box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-3px)}
+.stat-pill{background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:12px 18px;display:flex;align-items:center;gap:10px}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.floating{animation:float 4s ease-in-out infinite}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;display:inline-block;animation:pulse 2s infinite}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hero-grid{grid-template-columns:1fr!important}
+  .hero-card{display:none!important}
+  .services-grid{grid-template-columns:1fr 1fr!important}
+  .about-grid{grid-template-columns:1fr!important}
+  .about-visual{display:none!important}
+  .booking-grid{grid-template-columns:1fr!important}
+  .testimonials-grid{grid-template-columns:1fr!important}
+  .footer-grid{grid-template-columns:1fr 1fr!important}
+  .footer-brand{grid-column:1/-1!important}
+}
+@media(max-width:480px){
+  .services-grid{grid-template-columns:1fr!important}
+  .footer-grid{grid-template-columns:1fr!important}
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+const services = [
+  { icon: 'heart', title: 'Elderly Care', desc: 'Compassionate, round-the-clock support tailored to seniors\' unique health needs and daily routines.', color: '#fef2f2', iconColor: '#dc2626' },
+  { icon: 'user', title: 'Personal Care', desc: 'Dignified assistance with bathing, grooming, and hygiene to maintain comfort and well-being.', color: '#eff6ff', iconColor: '#1a5fa8' },
+  { icon: 'users', title: 'Companion Support', desc: 'Meaningful companionship to reduce isolation and foster joy through social connection and engagement.', color: '#f0fdf4', iconColor: '#16a34a' },
+  { icon: 'pill', title: 'Medication Reminders', desc: 'Timely reminders and organized medication management ensuring adherence to prescribed schedules.', color: '#fefce8', iconColor: '#ca8a04' },
+  { icon: 'home', title: 'In-Home Assistance', desc: 'Light housekeeping, meal prep, and errand support so loved ones can thrive independently at home.', color: '#faf5ff', iconColor: '#9333ea' },
+];
+
+const testimonials = [
+  { name: 'Margaret L.', role: 'Daughter of client', text: 'PrimeLife Care transformed my mother\'s quality of life. The caregivers are gentle, professional, and truly treat her like family. I have complete peace of mind.', rating: 5, initials: 'ML' },
+  { name: 'Robert S.', role: 'Client, 78 years', text: 'I was hesitant about in-home care but the team made the transition seamless. They respect my independence while being there whenever I need support.', rating: 5, initials: 'RS' },
+  { name: 'Sandra & Tom P.', role: 'Adult children of client', text: 'Finding PrimeLife was a turning point for our family. They matched us with the perfect caregiver, and my father is happier and healthier than ever.', rating: 5, initials: 'ST' },
+];
+
+const whyUs = [
+  { icon: 'shield', title: 'Fully Licensed & Insured', desc: 'All caregivers are background-checked, certified, and covered under comprehensive insurance.' },
+  { icon: 'clock', title: '24/7 Care Availability', desc: 'Round-the-clock support ensures your loved one is never without compassionate assistance.' },
+  { icon: 'star', title: 'Personalized Care Plans', desc: 'Every client receives a tailored care plan built around their specific health needs and preferences.' },
+  { icon: 'message', title: 'Family Communication', desc: 'Regular updates and transparent communication keep families connected and informed at all times.' },
+];
+
+function Icon({ name, size = 24, color = 'currentColor', stroke = 2 }) {
+  const paths = {
+    heart: <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>,
+    user: <><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></>,
+    users: <><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></>,
+    pill: <><path d="M10.5 20H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H20a2 2 0 0 1 2 2v2.5"/><path d="M12 13h4"/><path d="M18 9v6"/><circle cx="19" cy="19" r="3"/></>,
+    home: <><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></>,
+    shield: <><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></>,
+    clock: <><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></>,
+    star: <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>,
+    message: <><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></>,
+    check: <><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></>,
+    phone: <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>,
+    arrow: <><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></>,
+    calendar: <><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></>,
+    fb: <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>,
+    tw: <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>,
+    ig: <><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></>,
+    li: <><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></>,
+  };
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round">
+      {paths[name]}
+    </svg>
+  );
+}
+
+function Nav() {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const h = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', h);
+    return () => window.removeEventListener('scroll', h);
+  }, []);
+  return (
+    <nav style={{ boxShadow: scrolled ? '0 4px 24px rgba(0,0,0,.07)' : 'none' }}>
+      <div className="nav-logo">
+        <div className="nav-logo-icon">
+          <Icon name="home" size={18} color="white" stroke={2.5} />
+        </div>
+        <div>
+          <div style={{ fontWeight: 700, fontSize: 14, color: 'var(--navy)', lineHeight: 1.1 }}>PRIMELIFE</div>
+          <div style={{ fontSize: 10, color: 'var(--gray-400)', fontWeight: 500, letterSpacing: '.06em' }}>CARE GROUP LLC</div>
+        </div>
+      </div>
+      <div className="nav-links">
+        {['Services', 'About', 'Booking', 'Testimonials', 'Contact'].map(l => (
+          <a key={l} href={`#${l.toLowerCase()}`}>{l}</a>
+        ))}
+      </div>
+      <a href="#booking" className="btn-primary" style={{ padding: '10px 22px', fontSize: 13 }}>Book a Visit</a>
+    </nav>
+  );
+}
+
+function Hero() {
+  return (
+    <section style={{ minHeight: '100vh', background: 'linear-gradient(145deg,#0d1f3c 0%,#0f3460 45%,#0e6b5e 100%)', display: 'flex', alignItems: 'center', paddingTop: 72, position: 'relative', overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle at 70% 50%, rgba(14,143,122,.18) 0%, transparent 60%), radial-gradient(circle at 20% 80%, rgba(26,95,168,.2) 0%, transparent 50%)' }} />
+      <div style={{ position: 'absolute', top: '8%', right: '3%', width: 420, height: 420, borderRadius: '50%', background: 'rgba(255,255,255,.02)', border: '1px solid rgba(255,255,255,.05)' }} />
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 5%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center', width: '100%', position: 'relative' }} className="hero-grid">
+        <div>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(14,143,122,.2)', border: '1px solid rgba(14,143,122,.4)', borderRadius: 50, padding: '6px 16px', marginBottom: 24 }}>
+            <span className="live-dot" />
+            <span style={{ color: '#7effd4', fontSize: 13, fontWeight: 600, letterSpacing: '.04em' }}>Now Accepting New Clients</span>
+          </div>
+          <h1 className="serif" style={{ fontSize: 'clamp(36px,5vw,62px)', color: '#fff', lineHeight: 1.12, marginBottom: 20 }}>
+            Compassionate Care,<br/>
+            <em style={{ color: '#7effd4', fontStyle: 'italic' }}>Right at Home</em>
+          </h1>
+          <p style={{ color: 'rgba(255,255,255,.72)', fontSize: 18, lineHeight: 1.75, marginBottom: 36, maxWidth: 490 }}>
+            PrimeLife Care Group brings professional, heartfelt in-home care to seniors and families — so your loved ones can live with dignity, comfort, and independence.
+          </p>
+          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 48 }}>
+            <a href="#booking" className="btn-primary" style={{ boxShadow: '0 4px 20px rgba(14,143,122,.4)' }}>Book Care Visit</a>
+            <a href="#services" className="btn-outline" style={{ color: '#fff', borderColor: 'rgba(255,255,255,.3)', background: 'rgba(255,255,255,.08)' }}>Our Services</a>
+          </div>
+          <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+            {[['500+', 'Families Served'], ['12+', 'Years Experience'], ['98%', 'Satisfaction Rate']].map(([num, label]) => (
+              <div key={label} className="stat-pill">
+                <div>
+                  <div style={{ color: '#fff', fontWeight: 700, fontSize: 22 }}>{num}</div>
+                  <div style={{ color: 'rgba(255,255,255,.5)', fontSize: 12 }}>{label}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="hero-card floating" style={{ position: 'relative', width: '100%', maxWidth: 440, margin: '0 auto' }}>
+          <div style={{ background: 'rgba(255,255,255,.08)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,.15)', borderRadius: 28, padding: 28 }}>
+            <div style={{ background: 'rgba(255,255,255,.07)', borderRadius: 18, padding: 24, marginBottom: 16, textAlign: 'center' }}>
+              <div style={{ width: 72, height: 72, borderRadius: '50%', background: 'linear-gradient(135deg,#0e8f7a,#1a5fa8)', margin: '0 auto 14px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Icon name="heart" size={30} color="white" />
+              </div>
+              <div style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}>Your Care Coordinator</div>
+              <div style={{ color: 'rgba(255,255,255,.55)', fontSize: 13, marginTop: 4 }}>Available 24 hours / 7 days</div>
+            </div>
+            {[
+              { label: 'Next appointment', value: 'Today, 2:00 PM', icon: 'calendar' },
+              { label: 'Caregiver assigned', value: 'Verified & Certified', icon: 'shield' },
+              { label: 'Care plan status', value: 'Active & Personalized', icon: 'check' },
+            ].map(({ label, value, icon }) => (
+              <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,.08)' }}>
+                <div style={{ width: 34, height: 34, borderRadius: 10, background: 'rgba(14,143,122,.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Icon name={icon} size={15} color="#7effd4" />
+                </div>
+                <div>
+                  <div style={{ color: 'rgba(255,255,255,.5)', fontSize: 11, marginBottom: 2 }}>{label}</div>
+                  <div style={{ color: '#fff', fontWeight: 600, fontSize: 13 }}>{value}</div>
+                </div>
+              </div>
+            ))}
+            <div style={{ marginTop: 16, padding: '13px 18px', background: 'var(--teal)', borderRadius: 12, textAlign: 'center', cursor: 'pointer', fontWeight: 600, color: '#fff', fontSize: 14 }}>
+              View My Care Dashboard →
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Services() {
+  const [hovered, setHovered] = useState(null);
+  return (
+    <section id="services" style={{ padding: '100px 5%', background: 'var(--gray-50)' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: 60 }}>
+          <div className="section-label">Our Services</div>
+          <h2 className="serif" style={{ fontSize: 'clamp(28px,4vw,46px)', color: 'var(--navy)', marginBottom: 16 }}>Care Built Around Every Need</h2>
+          <p style={{ color: 'var(--gray-600)', fontSize: 17, maxWidth: 520, margin: '0 auto', lineHeight: 1.7 }}>
+            We provide a full spectrum of in-home care services designed to preserve independence, promote health, and bring peace of mind to the whole family.
+          </p>
+        </div>
+        <div className="services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 20 }}>
+          {services.map((s, i) => (
+            <div key={s.title} className="card" onMouseEnter={() => setHovered(i)} onMouseLeave={() => setHovered(null)}
+              style={{ padding: 28, cursor: 'default', boxShadow: hovered === i ? '0 16px 40px rgba(0,0,0,.1)' : '0 2px 16px rgba(0,0,0,.04)', transform: hovered === i ? 'translateY(-6px)' : 'none' }}>
+              <div style={{ width: 52, height: 52, borderRadius: 14, background: s.color, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 18 }}>
+                <Icon name={s.icon} size={24} color={s.iconColor} />
+              </div>
+              <h3 style={{ fontWeight: 700, fontSize: 16, color: 'var(--navy)', marginBottom: 8 }}>{s.title}</h3>
+              <p style={{ color: 'var(--gray-600)', fontSize: 14, lineHeight: 1.65, marginBottom: 16 }}>{s.desc}</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 4, color: 'var(--teal)', fontWeight: 600, fontSize: 13 }}>
+                Learn more <Icon name="arrow" size={13} color="var(--teal)" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function About() {
+  return (
+    <section id="about" style={{ padding: '100px 5%', background: '#fff' }}>
+      <div className="about-grid" style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+        <div className="about-visual" style={{ background: 'linear-gradient(135deg,var(--teal-light),var(--blue-light))', borderRadius: 28, padding: 32, position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', top: -20, right: -20, width: 120, height: 120, borderRadius: '50%', background: 'rgba(14,143,122,.1)' }} />
+          <div style={{ display: 'flex', gap: 12, marginBottom: 16 }}>
+            {[['120+', 'Caregivers', '#fff', 'var(--navy)'], ['8', 'Cities Covered', 'var(--teal)', '#fff']].map(([v, l, bg, tc]) => (
+              <div key={l} style={{ flex: 1, background: bg, borderRadius: 16, padding: 20, textAlign: 'center' }}>
+                <div style={{ fontSize: 28, fontWeight: 700, color: tc }}>{v}</div>
+                <div style={{ fontSize: 13, color: tc === '#fff' ? 'rgba(255,255,255,.7)' : 'var(--gray-600)' }}>{l}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{ background: '#fff', borderRadius: 16, padding: 20, marginBottom: 12 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+              <div style={{ width: 44, height: 44, borderRadius: '50%', background: 'linear-gradient(135deg,#0e8f7a,#1a5fa8)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Icon name="check" size={20} color="white" />
+              </div>
+              <div>
+                <div style={{ fontWeight: 700, color: 'var(--navy)', fontSize: 15 }}>Care Quality Score</div>
+                <div style={{ fontSize: 12, color: 'var(--gray-400)' }}>Based on 850+ family reviews</div>
+              </div>
+              <div style={{ marginLeft: 'auto', fontWeight: 700, fontSize: 20, color: 'var(--teal)' }}>4.9/5</div>
+            </div>
+            <div style={{ height: 6, background: 'var(--gray-100)', borderRadius: 3 }}>
+              <div style={{ height: '100%', width: '97%', background: 'linear-gradient(90deg,var(--teal),var(--blue))', borderRadius: 3 }} />
+            </div>
+          </div>
+          {whyUs.map(item => (
+            <div key={item.title} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, background: '#fff', borderRadius: 14, padding: '14px 16px', marginBottom: 10 }}>
+              <div style={{ width: 36, height: 36, borderRadius: 10, background: 'var(--teal-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <Icon name={item.icon} size={16} color="var(--teal)" />
+              </div>
+              <div>
+                <div style={{ fontWeight: 700, fontSize: 14, color: 'var(--navy)', marginBottom: 2 }}>{item.title}</div>
+                <div style={{ fontSize: 12, color: 'var(--gray-600)', lineHeight: 1.5 }}>{item.desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div>
+          <div className="section-label">Why Choose Us</div>
+          <h2 className="serif" style={{ fontSize: 'clamp(28px,4vw,46px)', color: 'var(--navy)', marginBottom: 20, lineHeight: 1.15 }}>
+            Where Expertise Meets<br/><em style={{ color: 'var(--teal)', fontStyle: 'italic' }}>Genuine Compassion</em>
+          </h2>
+          <p style={{ color: 'var(--gray-600)', fontSize: 16, lineHeight: 1.8, marginBottom: 20 }}>
+            At PrimeLife Care Group, we believe in-home care is more than a service — it's a calling. Our carefully vetted caregivers are trained professionals who bring warmth, expertise, and unwavering dedication to every home they enter.
+          </p>
+          <p style={{ color: 'var(--gray-600)', fontSize: 16, lineHeight: 1.8, marginBottom: 36 }}>
+            Founded on the principles of dignity, respect, and family trust, we partner with families to craft personalized care plans that evolve with your loved one's needs — ensuring they always feel safe, valued, and cared for.
+          </p>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+            <a href="#booking" className="btn-primary">Schedule Consultation</a>
+            <a href="#services" className="btn-outline">View Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Booking() {
+  const [selected, setSelected] = useState(null);
+  const [time, setTime] = useState(null);
+  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  const dates = [12, 13, 14, 15, 16, 17, 18];
+  const times = ['9:00 AM', '10:30 AM', '1:00 PM', '2:30 PM', '4:00 PM'];
+  const isReady = selected !== null && time !== null;
+  return (
+    <section id="booking" style={{ padding: '100px 5%', background: 'var(--gray-50)' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: 60 }}>
+          <div className="section-label">Book a Visit</div>
+          <h2 className="serif" style={{ fontSize: 'clamp(28px,4vw,46px)', color: 'var(--navy)', marginBottom: 16 }}>Schedule Your Free Consultation</h2>
+          <p style={{ color: 'var(--gray-600)', fontSize: 17, maxWidth: 480, margin: '0 auto', lineHeight: 1.7 }}>
+            Choose a date and time that works for you. Our care coordinator will contact you within 30 minutes to confirm.
+          </p>
+        </div>
+        <div className="booking-grid" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 28, maxWidth: 900, margin: '0 auto' }}>
+          <div className="card" style={{ padding: 32 }}>
+            <h3 style={{ fontWeight: 700, fontSize: 17, color: 'var(--navy)', marginBottom: 6 }}>Select a Date</h3>
+            <div style={{ color: 'var(--gray-400)', fontSize: 13, marginBottom: 20 }}>May 2026</div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7,1fr)', gap: 6, marginBottom: 28 }}>
+              {days.map(d => <div key={d} style={{ textAlign: 'center', fontSize: 11, fontWeight: 600, color: 'var(--gray-400)', padding: '4px 0' }}>{d}</div>)}
+              {dates.map((d, i) => (
+                <div key={d} onClick={() => setSelected(i)} style={{ textAlign: 'center', padding: '9px 0', borderRadius: 10, cursor: 'pointer', fontWeight: 600, fontSize: 14, background: selected === i ? 'var(--teal)' : 'transparent', color: selected === i ? '#fff' : i >= 5 ? 'var(--gray-300)' : 'var(--navy)', transition: 'all .15s' }}>{d}</div>
+              ))}
+            </div>
+            <h3 style={{ fontWeight: 700, fontSize: 17, color: 'var(--navy)', marginBottom: 16 }}>Available Times</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 10 }}>
+              {times.map(t => (
+                <div key={t} onClick={() => setTime(t)} style={{ padding: '10px 14px', borderRadius: 12, border: `2px solid ${time === t ? 'var(--teal)' : 'var(--gray-100)'}`, background: time === t ? 'var(--teal-light)' : '#fff', color: time === t ? 'var(--teal)' : 'var(--gray-600)', fontWeight: 600, fontSize: 14, cursor: 'pointer', textAlign: 'center', transition: 'all .15s' }}>{t}</div>
+              ))}
+            </div>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <div className="card" style={{ padding: 24, flex: 1 }}>
+              <h3 style={{ fontWeight: 700, fontSize: 16, color: 'var(--navy)', marginBottom: 16 }}>Your Appointment</h3>
+              {[['Date', selected !== null ? `May ${dates[selected]}, 2026` : '—'], ['Time', time || '—'], ['Type', 'Free Consultation'], ['Duration', '45 minutes'], ['Location', 'Your Home']].map(([l, v]) => (
+                <div key={l} style={{ display: 'flex', justifyContent: 'space-between', padding: '9px 0', borderBottom: '1px solid var(--gray-100)', fontSize: 14 }}>
+                  <span style={{ color: 'var(--gray-400)' }}>{l}</span>
+                  <span style={{ fontWeight: 600, color: 'var(--navy)' }}>{v}</span>
+                </div>
+              ))}
+              <button className="btn-primary" style={{ width: '100%', justifyContent: 'center', marginTop: 20, opacity: isReady ? 1 : .5, cursor: isReady ? 'pointer' : 'not-allowed' }}>
+                Confirm Booking
+              </button>
+            </div>
+            <div className="card" style={{ padding: 22, background: 'linear-gradient(135deg,var(--navy),#0f3460)', border: 'none' }}>
+              <div style={{ color: 'rgba(255,255,255,.55)', fontSize: 12, marginBottom: 4 }}>Need immediate help?</div>
+              <div style={{ color: '#fff', fontWeight: 700, fontSize: 16, marginBottom: 8 }}>Call us directly</div>
+              <a href="tel:5551234567" style={{ color: '#7effd4', fontWeight: 700, fontSize: 22, display: 'block', textDecoration: 'none' }}>(555) 123-4567</a>
+              <div style={{ color: 'rgba(255,255,255,.45)', fontSize: 12, marginTop: 4 }}>Available 24/7 for urgent care needs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Testimonials() {
+  const [active, setActive] = useState(0);
+  return (
+    <section id="testimonials" style={{ padding: '100px 5%', background: '#fff' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: 60 }}>
+          <div className="section-label">Testimonials</div>
+          <h2 className="serif" style={{ fontSize: 'clamp(28px,4vw,46px)', color: 'var(--navy)', marginBottom: 16 }}>Families Trust PrimeLife Care</h2>
+          <p style={{ color: 'var(--gray-600)', fontSize: 17, maxWidth: 460, margin: '0 auto', lineHeight: 1.7 }}>
+            Hear from the families and clients whose lives have been enriched by our dedicated care team.
+          </p>
+        </div>
+        <div className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20, marginBottom: 32 }}>
+          {testimonials.map((t, i) => (
+            <div key={t.name} onClick={() => setActive(i)} style={{ background: active === i ? 'linear-gradient(135deg,var(--navy),#0f3460)' : '#fff', border: `2px solid ${active === i ? 'var(--navy)' : 'var(--gray-100)'}`, borderRadius: 20, padding: 28, cursor: 'pointer', transition: 'all .25s' }}>
+              <div style={{ display: 'flex', gap: 3, marginBottom: 16 }}>
+                {Array(5).fill(0).map((_, j) => (
+                  <svg key={j} width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                ))}
+              </div>
+              <p style={{ color: active === i ? 'rgba(255,255,255,.82)' : 'var(--gray-600)', fontSize: 14, lineHeight: 1.72, marginBottom: 20 }}>"{t.text}"</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <div style={{ width: 42, height: 42, borderRadius: '50%', background: active === i ? 'rgba(14,143,122,.35)' : 'var(--teal-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 13, color: active === i ? '#7effd4' : 'var(--teal)' }}>{t.initials}</div>
+                <div>
+                  <div style={{ fontWeight: 700, fontSize: 14, color: active === i ? '#fff' : 'var(--navy)' }}>{t.name}</div>
+                  <div style={{ fontSize: 12, color: active === i ? 'rgba(255,255,255,.45)' : 'var(--gray-400)' }}>{t.role}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 8 }}>
+          {testimonials.map((_, i) => <div key={i} onClick={() => setActive(i)} style={{ width: i === active ? 24 : 8, height: 8, borderRadius: 4, background: i === active ? 'var(--teal)' : 'var(--gray-200)', cursor: 'pointer', transition: 'all .2s' }} />)}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CTABanner() {
+  return (
+    <section style={{ padding: '88px 5%', background: 'linear-gradient(135deg,var(--navy) 0%,#0f3460 50%,#0e8f7a 100%)', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle at 80% 20%, rgba(14,143,122,.18) 0%, transparent 50%)' }} />
+      <div style={{ maxWidth: 740, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.2)', borderRadius: 50, padding: '6px 16px', marginBottom: 24 }}>
+          <Icon name="check" size={14} color="#7effd4" />
+          <span style={{ color: '#7effd4', fontSize: 13, fontWeight: 600 }}>Free Consultation — No Commitment</span>
+        </div>
+        <h2 className="serif" style={{ fontSize: 'clamp(28px,4vw,52px)', color: '#fff', marginBottom: 20, lineHeight: 1.15 }}>
+          Your Family Deserves the<br/>
+          <em style={{ color: '#7effd4' }}>Very Best Care</em>
+        </h2>
+        <p style={{ color: 'rgba(255,255,255,.68)', fontSize: 18, marginBottom: 36, lineHeight: 1.75, maxWidth: 500, margin: '0 auto 36px' }}>
+          Take the first step toward exceptional in-home care. Our team is ready to create a personalized care plan for your loved one.
+        </p>
+        <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <a href="#booking" className="btn-primary" style={{ background: '#fff', color: 'var(--navy)', boxShadow: '0 4px 20px rgba(0,0,0,.2)' }}>Schedule Free Consultation</a>
+          <a href="tel:5551234567" className="btn-outline" style={{ color: '#fff', borderColor: 'rgba(255,255,255,.3)', background: 'rgba(255,255,255,.08)' }}>
+            <Icon name="phone" size={16} color="#fff" /> Call (555) 123-4567
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  const cols = {
+    'Services': ['Elderly Care', 'Personal Care', 'Companion Support', 'Medication Reminders', 'In-Home Assistance'],
+    'Company': ['About Us', 'Our Team', 'Careers', 'Blog', 'Press'],
+    'Support': ['FAQ', 'Contact Us', 'Privacy Policy', 'Terms of Service', 'Insurance & Coverage'],
+  };
+  const socials = [
+    { icon: 'fb', label: 'Facebook' }, { icon: 'tw', label: 'Twitter' },
+    { icon: 'ig', label: 'Instagram' }, { icon: 'li', label: 'LinkedIn' },
+  ];
+  return (
+    <footer id="contact" style={{ background: 'var(--navy)', color: '#fff', padding: '60px 5% 28px' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1fr', gap: 48, marginBottom: 48, paddingBottom: 48, borderBottom: '1px solid rgba(255,255,255,.1)' }}>
+          <div className="footer-brand">
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+              <div style={{ width: 36, height: 36, borderRadius: 10, background: 'linear-gradient(135deg,var(--teal),var(--blue))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Icon name="home" size={17} color="white" stroke={2.5} />
+              </div>
+              <div>
+                <div style={{ fontWeight: 700, fontSize: 13 }}>PRIMELIFE CARE</div>
+                <div style={{ fontSize: 10, color: 'rgba(255,255,255,.35)', letterSpacing: '.06em' }}>GROUP LLC</div>
+              </div>
+            </div>
+            <p style={{ color: 'rgba(255,255,255,.5)', fontSize: 14, lineHeight: 1.75, marginBottom: 20, maxWidth: 260 }}>
+              Compassionate, professional in-home care that brings dignity, comfort, and independence to every life we touch.
+            </p>
+            <div style={{ display: 'flex', gap: 10 }}>
+              {socials.map(({ icon, label }) => (
+                <div key={label} title={label} style={{ width: 36, height: 36, borderRadius: 10, background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+                  <Icon name={icon} size={15} color="rgba(255,255,255,.6)" />
+                </div>
+              ))}
+            </div>
+          </div>
+          {Object.entries(cols).map(([cat, items]) => (
+            <div key={cat}>
+              <div style={{ fontWeight: 700, fontSize: 12, color: '#fff', marginBottom: 16, letterSpacing: '.06em' }}>{cat.toUpperCase()}</div>
+              {items.map(item => <div key={item} style={{ color: 'rgba(255,255,255,.45)', fontSize: 14, marginBottom: 10, cursor: 'pointer' }}>{item}</div>)}
+            </div>
+          ))}
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
+          <div style={{ color: 'rgba(255,255,255,.3)', fontSize: 13 }}>© 2026 PrimeLife Care Group LLC. All rights reserved.</div>
+          <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
+            <span className="live-dot" style={{ width: 7, height: 7 }} />
+            <span style={{ color: 'rgba(255,255,255,.35)', fontSize: 13 }}>Care coordinators available 24/7</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <Nav />
+      <Hero />
+      <Services />
+      <About />
+      <Booking />
+      <Testimonials />
+      <CTABanner />
+      <Footer />
+      {/* === LIVE CHAT INTEGRATION POINT === */}
+      {/* Drop your LiveChat / Intercom / Tidio widget component here */}
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
