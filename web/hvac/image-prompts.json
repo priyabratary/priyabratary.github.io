@@ -1,0 +1,33 @@
+{
+  "tool": "Built-in image_gen.imagegen",
+  "prompts": [
+    {
+      "asset": "assets/story.png",
+      "prompt": "Use case: photorealistic-natural. Asset: landscape HVAC About page service photograph. A friendly American HVAC technician in a clean navy work shirt and cap, crouching next to an outdoor AC condenser beside a tidy suburban home, inspecting the accessible unit with a handheld meter, natural daylight, green garden softly blurred. Candid professional commercial photography, believable equipment, no logos, no text. Horizontal 3:2 composition."
+    },
+    {
+      "asset": "assets/daniel.png",
+      "prompt": "Use case: photorealistic-natural. Asset: HVAC website sample team portrait. A fictional friendly 45-year-old white male service director with short brown hair and neat beard, navy work polo, arms loosely folded, waist-up portrait facing camera. Outdoor service van and leafy residential background softly blurred. Natural daylight, authentic professional service-business photography, no logos, no text, vertical 4:5."
+    },
+    {
+      "asset": "assets/marcus.png",
+      "prompt": "Use case: photorealistic-natural. Asset: HVAC website sample team portrait. A fictional friendly 38-year-old Black male senior HVAC technician with short hair, clean navy short sleeve work shirt, waist-up portrait facing camera. Outdoor service van and leafy residential background softly blurred. Natural daylight, authentic professional service-business photography, no logos, no text, vertical 4:5."
+    },
+    {
+      "asset": "assets/ethan.png",
+      "prompt": "Use case: photorealistic-natural. Asset: HVAC website sample team portrait. A fictional friendly 30-year-old white male HVAC installation specialist, short brown hair, navy baseball cap and clean navy work shirt, waist-up portrait facing camera, hands relaxed. Outdoor service van and leafy residential background softly blurred. Natural daylight, authentic professional service-business photography, no logos, no text, vertical 4:5."
+    },
+    {
+      "asset": "assets/olivia.png",
+      "prompt": "Use case: photorealistic-natural. Asset: HVAC website sample team portrait. A fictional friendly 34-year-old woman customer care manager with shoulder-length brown hair, clean navy polo shirt, waist-up portrait facing camera. Outdoor service office and leafy residential background softly blurred. Natural daylight, authentic professional service-business photography, no logos, no text, vertical 4:5."
+    },
+    {
+      "asset": "assets/cooling-hero.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: AirHero cooling service detail page hero photo. Scene/backdrop: tidy American suburban home exterior in summer with soft greenery. Subject: friendly professional HVAC technician in a clean plain navy work shirt and navy cap, kneeling beside an outdoor residential air-conditioning condenser, clearly diagnosing it with a digital manifold gauge. Style/medium: polished but authentic commercial photography with realistic equipment and natural skin texture. Composition/framing: wide horizontal 3:2, technician and obvious condenser both clearly visible, medium-wide camera angle. Lighting/mood: bright natural daylight, trustworthy and capable. Color palette: navy clothing, cool whites, restrained blues and green foliage. Constraints: no branding, no words, no logos, no watermark, no superhero, no unsafe work."
+    },
+    {
+      "asset": "assets/cooling-service.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: AirHero cooling service detail section photo. Scene/backdrop: clean residential utility area beside a modern American home. Subject: experienced HVAC technician in a clean plain navy work shirt inspecting the open service panel of a residential outdoor AC condenser with a multimeter, concentrating on the work. Style/medium: candid editorial commercial photography, realistic tools and equipment, natural detail. Composition/framing: horizontal 3:2 with technician positioned slightly left and condenser to the right, both fully legible. Lighting/mood: soft late-morning daylight, calm, precise, dependable. Color palette: cool blue and neutral home exterior with restrained greenery. Constraints: no branding, no text, no logos, no watermark, no staged handshake, no office setting, no unsafe work."
+    }
+  ]
+}
