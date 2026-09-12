@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LawnHero — Lawn Care, Pest Control &amp; Tree Care in Austin, TX</title>
+<meta name="description" content="LawnHero keeps your entire yard healthy — lawn care, pest control and tree care from local Austin-area experts. Get your free quote." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { deep: '#173F2B', fresh: '#57A83E', cream: '#F7F5EC', sunny: '#F4C84A', ink: '#10251A' },
+      fontFamily: { sans: ['Manrope','ui-sans-serif','system-ui','sans-serif'], serif: ['Fraunces','Georgia','serif'] },
+      boxShadow: { card: '0 10px 34px -14px rgba(16,37,26,.22)', pop: '0 18px 50px -16px rgba(16,37,26,.35)' }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="antialiased overflow-x-clip">
+
+<!-- ================= NAV ================= -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 anim-nav">
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8">
+    <div class="bar flex items-center justify-between gap-3 py-4">
+      <a href="#home" class="flex items-center gap-2 shrink-0" aria-label="LawnHero home">
+        <span class="w-10 h-10 rounded-2xl bg-deep grid place-items-center">
+          <svg class="w-5 h-5 text-sunny" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"/><path d="M12 13c0-3 2.5-6 6-6 0 3-2.5 6-6 6z"/><path d="M12 13c0-3-2.5-6-6-6 0 3 2.5 6 6 6z"/></svg>
+        </span>
+        <span class="text-[22px] font-extrabold tracking-tight logo-word">Lawn<span class="logo-hero">Hero</span></span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-8 text-[15px] font-bold" aria-label="Primary">
+        <a href="#home" class="nav-link">Home</a><a href="#services" class="nav-link">Services</a>
+        <a href="#results" class="nav-link">Results</a><a href="#about" class="nav-link">About</a>
+        <a href="#reviews" class="nav-link">Reviews</a><a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="tel:+15125550184" class="phone-pill flex items-center gap-2.5 border-2 rounded-full pl-2 pr-5 py-1.5 hover:border-fresh transition" aria-label="Call LawnHero">
+          <span class="w-9 h-9 rounded-full bg-deep grid place-items-center">
+            <svg class="w-4 h-4 text-sunny" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <span class="leading-none text-left"><span class="pl block text-[10.5px] font-bold uppercase tracking-wider">Call us today</span><span class="pn text-[16px] font-extrabold">(512) 555-0184</span></span>
+        </a>
+        <a href="#quote" class="btn bg-sunny hover:bg-[#e5b93c] text-ink font-extrabold rounded-full px-6 py-3.5 inline-flex items-center gap-2 shadow-card">Get Free Quote
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="flex lg:hidden items-center gap-2">
+        <a href="tel:+15125550184" aria-label="Call" class="w-11 h-11 grid place-items-center rounded-full bg-deep">
+          <svg class="w-5 h-5 text-sunny" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
+        <a href="#quote" class="bg-sunny text-ink text-[14px] font-extrabold rounded-full px-5 py-2.5">Quote</a>
+        <button id="menu-btn" class="menu-btn w-11 h-11 grid place-items-center rounded-xl border" aria-label="Menu" aria-expanded="false">
+          <svg id="ic-o" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg id="ic-c" class="w-6 h-6 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="lg:hidden hidden mx-4 mb-3 rounded-2xl bg-white shadow-pop border border-ink/10 overflow-hidden">
+    <nav class="px-5 py-3 flex flex-col text-[16px] font-bold" aria-label="Mobile">
+      <a href="#home" class="py-3 border-b border-ink/5">Home</a><a href="#services" class="py-3 border-b border-ink/5">Services</a>
+      <a href="#results" class="py-3 border-b border-ink/5">Results</a><a href="#about" class="py-3 border-b border-ink/5">About</a>
+      <a href="#reviews" class="py-3 border-b border-ink/5">Reviews</a><a href="#faq" class="py-3">FAQ</a>
+      <a href="#quote" class="my-2 bg-sunny text-center rounded-full py-3.5 font-extrabold">Get Free Quote →</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+<!-- ================= 01 HERO ================= -->
+<section class="relative bg-white overflow-hidden">
+  <div class="hero-floral" aria-hidden="true" style="display:none"></div>
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8 grid lg:grid-cols-[1fr_1.05fr] gap-8 items-center relative z-10 pt-[120px] lg:pt-[150px]">
+    <div class="pb-14 lg:pb-20">
+      <p class="a-fade text-[13px] font-bold text-leaf" style="animation-delay:.1s">— Transforming lawns into lush, green spaces —</p>
+      <h1 class="mt-4 font-extrabold tracking-[-0.02em] leading-[1.04] text-[44px] sm:text-[60px] xl:text-[66px]">
+        <span class="mask d1"><span class="text-deep">A <span class="text-fresh">Greener Lawn.</span></span></span>
+        <span class="mask d2"><span class="text-deep">Without the Weekend Work.</span></span>
+      </h1>
+      <p class="a-fade mt-5 text-[16px] sm:text-[17px] leading-relaxed text-ink/60 max-w-[480px]" style="animation-delay:.35s">
+        From routine lawn care to pest protection and tree care, LawnHero keeps your entire yard healthy, beautiful and ready to enjoy.</p>
+      <div class="a-fade mt-4 flex flex-wrap gap-2" style="animation-delay:.45s">
+        <span class="inline-flex items-center gap-1.5 bg-white border border-ink/10 rounded-full px-3.5 py-1.5 text-[13.5px] font-bold text-deep shadow-sm"><span class="text-fresh">✓</span> Lawn Care</span>
+        <span class="inline-flex items-center gap-1.5 bg-white border border-ink/10 rounded-full px-3.5 py-1.5 text-[13.5px] font-bold text-deep shadow-sm"><span class="text-fresh">✓</span> Pest Control</span>
+        <span class="inline-flex items-center gap-1.5 bg-white border border-ink/10 rounded-full px-3.5 py-1.5 text-[13.5px] font-bold text-deep shadow-sm"><span class="text-fresh">✓</span> Tree Care</span>
+      </div>
+      <div class="a-fade mt-6 max-w-[540px]" style="animation-delay:.55s">
+        <form data-zip-form class="flex flex-col sm:flex-row gap-2 bg-white rounded-[26px] sm:rounded-full p-2 shadow-pop border border-ink/10" aria-label="Get quote by ZIP">
+          <div class="flex items-center flex-1 gap-2 pl-4">
+            <svg class="w-5 h-5 text-fresh shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <label for="hero-zip" class="sr-only">Enter your ZIP code</label>
+            <input id="hero-zip" data-zip-input inputmode="numeric" maxlength="5" placeholder="Enter your ZIP code" class="w-full h-[52px] bg-transparent outline-none text-[16px] font-semibold placeholder:text-ink/35 placeholder:font-medium" />
+          </div>
+          <button class="btn bg-sunny hover:bg-[#e5b93c] text-ink font-extrabold rounded-2xl sm:rounded-full px-7 h-[52px] inline-flex items-center justify-center gap-2 whitespace-nowrap">Get My Free Quote
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </form>
+        <p data-zip-error class="hidden mt-2 text-[13px] font-bold text-red-700">Please enter a valid 5-digit ZIP.</p>
+        <p class="mt-2.5 flex gap-5 text-[13.5px] font-semibold text-ink/55"><span>✓ Free estimate</span><span>✓ No obligation</span></p>
+      </div>
+      <div class="a-fade mt-6 flex flex-wrap gap-3" style="animation-delay:.62s">
+        <div class="p-4 w-[190px] text-center">
+          <span class="mx-auto w-9 h-9 rounded-full bg-deep grid place-items-center">
+            <svg class="w-4 h-4 text-sunny" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"/><path d="M12 13c0-3 2.5-6 6-6 0 3-2.5 6-6 6z"/><path d="M12 13c0-3-2.5-6-6-6 0 3 2.5 6 6 6z"/></svg>
+          </span>
+          <p class="mt-2 text-[13px] font-extrabold text-deep leading-snug">Get 20% off your first mow</p>
+          <a href="#quote" class="mt-1 inline-block text-[12px] font-bold text-ink/55 underline underline-offset-2 hover:text-deep">Register Now</a>
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-ink/10 shadow-card w-[190px] h-[176px]">
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=500&q=80" alt="LawnHero specialist edging a garden bed" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div class="a-fade mt-6 flex items-center gap-5 sm:gap-7 text-[14px]" style="animation-delay:.72s">
+        <span><span class="text-[#E9A800] tracking-tight">★★★★★</span> <strong class="text-deep">4.9</strong><br/><span class="text-ink/55 font-semibold text-[12.5px]">Google Rating</span></span>
+        <span class="w-px h-9 bg-ink/15"></span>
+        <span><strong class="text-deep text-[19px]">1,200+</strong><br/><span class="text-ink/55 font-semibold text-[12.5px]">Happy Homeowners</span></span>
+        <span class="w-px h-9 bg-ink/15"></span>
+        <span><strong class="text-deep text-[19px]">100%</strong><br/><span class="text-ink/55 font-semibold text-[12.5px]">Satisfaction Guarantee</span></span>
+      </div>
+    </div>
+    <div class="hidden lg:block h-[640px]" aria-hidden="true"></div>
+  </div>
+  <div class="relative h-[320px] sm:h-[420px] lg:absolute lg:right-0 lg:top-0 lg:bottom-0 lg:h-auto lg:w-[54%] z-20 pointer-events-none">
+    <img src="worker-new.png"
+      onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1590820292118-e256c3ac2676?auto=format&fit=crop&w=1100&q=80'"
+      alt="Smiling lawn care professional pushing a red mower across a lush green lawn" class="absolute inset-0 w-full h-full object-cover object-[68%_45%]" fetchpriority="high" />
+  </div>
+</section>
+
+<!-- ================= 02 LOGO CAROUSEL ================= -->
+<section class="border-y border-ink/10 bg-cream/60 py-6 overflow-hidden" aria-label="Trusted by homeowners">
+  <p class="text-center text-[12.5px] font-bold text-ink/50 mb-4">Trusted by homeowners across the community</p>
+  <div class="relative">
+    <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-cream to-transparent z-10"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-cream to-transparent z-10"></div>
+    <div class="flex w-max gap-14 pr-14 text-deep/40 font-extrabold text-[17px] whitespace-nowrap" id="logo-track">
+      <span>❀ Local Choice</span><span>⌂ HomeCare</span><span>◍ GreenSafe</span><span>★ Neighborhood Pro</span><span>❋ Eco Lawn</span><span>⬣ HomeShield</span>
+      <span>❀ Local Choice</span><span>⌂ HomeCare</span><span>◍ GreenSafe</span><span>★ Neighborhood Pro</span><span>❋ Eco Lawn</span><span>⬣ HomeShield</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 ABOUT ================= -->
+<section id="about" class="scroll-mt-28 relative">
+  <div id="about-scroll" class="relative lg:h-[220vh]">
+    <div class="lg:sticky lg:top-0 lg:h-screen flex flex-col items-center justify-center overflow-hidden py-14 lg:py-0">
+      <div id="about-stage" class="relative w-full max-w-[1200px] mx-auto px-5 sm:px-8 flex items-center justify-center min-h-[520px] lg:min-h-[800px]">
+        <img class="grow-img hidden lg:block absolute left-1/2 top-1/2 z-0 pointer-events-none rounded-[22px] object-cover shadow-pop" style="width:200px;height:200px" data-s="0" data-e="0.5" data-a="200" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=500&q=80" alt="LawnHero specialist caring for garden plants" loading="lazy" />
+        <img class="grow-img hidden lg:block absolute left-1/2 top-1/2 z-0 pointer-events-none rounded-[22px] object-cover shadow-pop" style="width:160px;height:160px" data-s="0.1" data-e="0.6" data-a="340" src="https://images.unsplash.com/photo-1590820292118-e256c3ac2676?auto=format&fit=crop&w=500&q=80" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=500&q=80'" alt="Mower cutting fresh stripes into a lawn" loading="lazy" />
+        <img class="grow-img hidden lg:block absolute left-1/2 top-1/2 z-0 pointer-events-none rounded-[22px] object-cover shadow-pop" style="width:180px;height:180px" data-s="0.2" data-e="0.7" data-a="150" src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=500&q=80" alt="Thick healthy green lawn" loading="lazy" />
+        <img class="grow-img hidden lg:block absolute left-1/2 top-1/2 z-0 pointer-events-none rounded-[22px] object-cover shadow-pop" style="width:210px;height:210px" data-s="0.3" data-e="0.8" data-a="25" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=500&q=80" alt="Suburban home with a cared-for front lawn" loading="lazy" />
+        <img class="grow-img hidden lg:block absolute left-1/2 top-1/2 z-0 pointer-events-none rounded-[22px] object-cover shadow-pop" style="width:120px;height:120px" data-s="0.4" data-e="0.9" data-a="270" src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=500&q=80" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=500&q=80'"         alt="Healthy mature trees" loading="lazy" />
+        <div class="grow-img hidden lg:block absolute left-1/2 top-1/2 z-0 pointer-events-none w-[200px] rounded-2xl bg-white/95 backdrop-blur shadow-pop px-4 py-3 text-left" data-s="0.15" data-e="0.65" data-a="100">
+          <p class="tracking-tight text-[13px]"><span class="text-sunny">★★★★★</span> <strong class="text-deep">4.9</strong></p>
+          <p class="text-[12.5px] font-bold text-ink/60">500+ happy lawns</p>
+        </div>
+        <div class="grow-img hidden lg:block absolute left-1/2 top-1/2 z-0 pointer-events-none w-[200px] rounded-2xl bg-white/95 backdrop-blur shadow-pop px-4 py-3 text-left" data-s="0.35" data-e="0.85" data-a="250">
+          <p class="font-extrabold text-deep text-[14px]">✓ 15+ Years</p>
+          <p class="text-[12.5px] font-bold text-ink/60">Local lawn experts</p>
+        </div>
+        <div id="about-center" class="rv relative z-20 text-center max-w-[620px] px-4">
+          <p class="text-[12.5px] font-extrabold tracking-[.16em] text-leaf">— ABOUT LAWNHERO —</p>
+          <p class="mt-2 font-serif font-bold text-deep leading-none text-[72px] sm:text-[110px]">98%</p>
+          <h2 class="mt-1 font-serif text-deep text-[28px] sm:text-[42px] leading-[1.12] tracking-tight">of LawnHero yards look visibly healthier within 8 weeks.</h2>
+          <p class="mt-4 text-[15.5px] text-ink/60 max-w-[460px] mx-auto">Local specialists, smart treatments and year-round care for lawns, trees and outdoor spaces.</p>
+          <div class="mt-5 flex items-center justify-center gap-2.5">
+            <a href="#quote" class="btn bg-lime hover:bg-[#a8e04b] transition text-deep text-[14px] font-extrabold rounded-xl px-6 py-3 shadow-card">More About Us</a>
+            <a href="#services" aria-label="See services" class="btn w-[48px] h-[48px] rounded-xl bg-lime hover:bg-[#a8e04b] transition grid place-items-center text-deep font-extrabold shadow-card">↗</a>
+          </div>
+          <div class="mt-7 flex items-center justify-center gap-6 sm:gap-8 text-[13.5px]">
+            <span><strong class="text-deep text-[18px]">15+</strong> <span class="text-ink/55 font-semibold">Years</span></span>
+            <span><strong class="text-deep text-[18px]">Local</strong> <span class="text-ink/55 font-semibold">Specialists</span></span>
+            <span><strong class="text-deep text-[18px]">100%</strong> <span class="text-ink/55 font-semibold">Guaranteed</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="lg:hidden mt-4 flex gap-3 overflow-x-auto no-bar snap-x px-5 pb-2 w-full justify-start">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=300&q=80" alt="Lawn specialist" loading="lazy" class="snap-start shrink-0 w-24 h-24 rounded-2xl object-cover" />
+        <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=300&q=80" alt="Green lawn" loading="lazy" class="snap-start shrink-0 w-24 h-24 rounded-2xl object-cover" />
+        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=300&q=80" alt="Home with lawn" loading="lazy" class="snap-start shrink-0 w-24 h-24 rounded-2xl object-cover" />
+        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=300&q=80" alt="Crew member" loading="lazy" class="snap-start shrink-0 w-24 h-24 rounded-2xl object-cover" />
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=300&q=80" alt="Manicured yard" loading="lazy" class="snap-start shrink-0 w-24 h-24 rounded-2xl object-cover" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 SERVICES ================= -->
+<section id="services" class="scroll-mt-24">
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8 pt-14 lg:pt-20 rv">
+    <p class="flex items-center gap-2 text-[13px] font-extrabold tracking-[.1em] text-deep">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      OUR SERVICES</p>
+    <div class="mt-4 grid lg:grid-cols-2 gap-6 items-end">
+      <h2 class="font-extrabold text-deep text-[36px] sm:text-[56px] leading-[1.05] tracking-tight">Complete Yard<br/>Solutions</h2>
+      <div>
+        <p class="text-ink/60 text-[16px] leading-relaxed max-w-[440px]">From weekly mowing to pest protection and tree care, LawnHero keeps your property healthy and beautiful all year.</p>
+        <a href="#quote" class="btn mt-4 inline-flex items-center gap-3 bg-sunny hover:bg-[#e5b93c] transition rounded-full pl-6 pr-2 py-2 font-extrabold text-deep text-[15px]">View Services <span class="w-10 h-10 rounded-full bg-deep text-sunny grid place-items-center text-[18px]">↗</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8 py-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
+    <div class="flex flex-col gap-5">
+      <article class="svc-simple rv bg-white rounded-[26px] p-7 flex flex-col flex-1 shadow-card border border-ink/5">
+        <h3 class="font-extrabold text-deep text-[22px]">Pest Control</h3>
+        <p class="mt-auto pt-10 text-[14.5px] text-ink/60 leading-relaxed">Mosquito, tick and grub treatments that keep your yard comfortable and bite-free.</p>
+      </article>
+      <article class="svc-simple rv bg-white rounded-[26px] p-7 flex flex-col flex-1 shadow-card border border-ink/5" style="transition-delay:80ms">
+        <h3 class="font-extrabold text-deep text-[22px]">Weed Control</h3>
+        <p class="mt-auto pt-10 text-[14.5px] text-ink/60 leading-relaxed">Clear existing weeds and stop new ones from taking hold.</p>
+      </article>
+    </div>
+    <div class="flex flex-col gap-5">
+      <article class="svc-simple rv bg-white rounded-[26px] p-7 flex flex-col flex-1 shadow-card border border-ink/5" style="transition-delay:60ms">
+        <h3 class="font-extrabold text-deep text-[22px]">Tree &amp; Shrub Care</h3>
+        <p class="mt-auto pt-10 text-[14.5px] text-ink/60 leading-relaxed">Feeding, trimming and protection for healthy, beautiful plants.</p>
+      </article>
+      <article class="svc-simple rv bg-white rounded-[26px] p-7 flex flex-col flex-1 shadow-card border border-ink/5" style="transition-delay:140ms">
+        <h3 class="font-extrabold text-deep text-[22px]">Gardening</h3>
+        <p class="mt-auto pt-10 text-[14.5px] text-ink/60 leading-relaxed">Beds, mulch and planting, kept neat through every season.</p>
+      </article>
+    </div>
+    <article class="svc-simple rv relative rounded-[26px] overflow-hidden min-h-[420px] lg:min-h-full md:col-span-2 lg:col-span-1 group" style="transition-delay:120ms">
+      <img src="https://images.unsplash.com/photo-1590820292118-e256c3ac2676?auto=format&fit=crop&w=900&q=80" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=900&q=80'" alt="LawnHero technician mowing a striped lawn" loading="lazy" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
+      <div class="absolute bottom-0 p-7">
+        <h3 class="font-extrabold text-white text-[26px] leading-tight">Lawn Care</h3>
+        <p class="mt-2 text-[14.5px] text-white/80 leading-relaxed">Mowing, feeding and seasonal treatments for thick, green grass.</p>
+        <a href="#quote" class="mt-3 inline-flex items-center gap-2 font-bold text-[13.5px] text-white/90 hover:text-white transition">Explore <span>→</span></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= 05 BEFORE / AFTER ================= -->
+<section id="results" class="scroll-mt-28 py-14 lg:py-20">
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8">
+    <div class="rv max-w-[640px]">
+      <h2 class="text-[32px] sm:text-[52px] font-extrabold tracking-tight text-deep"><span class="rv-mask"><span>Results you can see.</span></span></h2>
+      <p class="mt-3 text-ink/60 text-[17px]">Thoughtful care can completely change how a lawn looks, feels and grows.</p>
+    </div>
+    <div class="rv mt-7 grid lg:grid-cols-[1.4fr_1fr] gap-6 items-stretch">
+      <div>
+        <div id="ba-wrap" class="relative rounded-[24px] overflow-hidden shadow-card border border-ink/10 select-none cursor-ew-resize touch-pan-y">
+          <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1200&q=80" alt="Healthy dense green lawn after LawnHero care" class="w-full h-[300px] sm:h-[420px] object-cover pointer-events-none" draggable="false" loading="lazy" />
+          <div id="ba-before" class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1200&q=80" alt="Dry patchy weed-filled lawn before care" class="ba-filtered w-full h-[300px] sm:h-[420px] object-cover pointer-events-none" draggable="false" loading="lazy" />
+          </div>
+          <span class="absolute top-4 left-4 z-10 text-[11px] font-extrabold tracking-[.1em] bg-white/95 rounded-lg px-2.5 py-1.5">BEFORE</span>
+          <span class="absolute top-4 right-4 z-10 text-[11px] font-extrabold tracking-[.1em] bg-deep text-white rounded-lg px-2.5 py-1.5">AFTER</span>
+          <div id="ba-line" class="absolute top-0 bottom-0 w-[2px] bg-white z-[5]" style="left:50%"></div>
+          <div id="ba-handle" class="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 z-[6] w-12 h-12 rounded-full bg-white shadow-pop grid place-items-center">
+            <svg class="w-5 h-5 text-deep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 4 12l5 6M15 6l5 6-5 6"/></svg>
+          </div>
+        </div>
+        <input id="ba-range" type="range" min="0" max="100" value="50" aria-label="Before after slider" class="w-full mt-4 accent-[#173F2B]" />
+      </div>
+      <div class="bg-white rounded-[24px] border border-ink/10 p-7 shadow-card flex flex-col justify-center">
+        <p class="text-[13px] font-extrabold tracking-wide text-fresh uppercase">8 weeks of customized lawn care</p>
+        <ul class="mt-4 space-y-4">
+          <li class="flex gap-3"><span class="w-10 h-10 rounded-xl bg-deep text-sunny grid place-items-center font-extrabold shrink-0">✿</span><span><strong class="block text-deep">Fuller Growth</strong><span class="text-[14px] text-ink/60">Thicker turf that fills in bare spots.</span></span></li>
+          <li class="flex gap-3"><span class="w-10 h-10 rounded-xl bg-deep text-sunny grid place-items-center font-extrabold shrink-0">◍</span><span><strong class="block text-deep">Fewer Weeds</strong><span class="text-[14px] text-ink/60">Targeted control keeps weeds from spreading.</span></span></li>
+          <li class="flex gap-3"><span class="w-10 h-10 rounded-xl bg-deep text-sunny grid place-items-center font-extrabold shrink-0">❋</span><span><strong class="block text-deep">Healthier Color</strong><span class="text-[14px] text-ink/60">Deep, even green from balanced feeding.</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 GET A QUOTE ================= -->
+<section id="quote" class="scroll-mt-28 bg-deep text-white py-14 lg:py-20">
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-10 items-center">
+    <div class="rv">
+      <h2 class="text-[32px] sm:text-[52px] font-extrabold tracking-tight leading-[1.08]">Let’s make your yard<br/>the best on the block.</h2>
+      <p class="mt-4 text-white/70 text-[17px] max-w-[460px]">Tell us what your property needs and a local LawnHero specialist will help recommend the right service.</p>
+      <div class="mt-6 flex items-center gap-3 text-[14px]">
+        <span class="text-sunny">★★★★★</span><span class="font-bold">4.9 rated</span><span class="text-white/40">•</span><span class="text-white/70">Free estimate. No obligation.</span>
+      </div>
+      <a href="tel:+15125550184" class="btn mt-6 inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-full pl-2 pr-6 py-2 hover:bg-white/15">
+        <span class="w-10 h-10 rounded-full bg-sunny grid place-items-center">
+          <svg class="w-5 h-5 text-deep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </span>
+        <span class="text-left leading-tight"><span class="block text-[12px] text-white/60 font-bold">Prefer to talk?</span><span class="font-extrabold text-[18px]">(512) 555-0184</span></span>
+      </a>
+    </div>
+    <div class="rv bg-cream text-ink rounded-[26px] p-6 sm:p-9 shadow-pop">
+      <form id="quote-form" class="grid sm:grid-cols-2 gap-3.5" novalidate>
+        <div><label for="q-name" class="text-[13px] font-extrabold">Name</label><input id="q-name" required placeholder="Jane Smith" class="field mt-1.5 w-full h-12 rounded-xl border border-ink/15 px-4 text-[15px] font-medium placeholder:text-ink/35 bg-white" /></div>
+        <div><label for="q-phone" class="text-[13px] font-extrabold">Phone</label><input id="q-phone" type="tel" required placeholder="(512) 000-0000" class="field mt-1.5 w-full h-12 rounded-xl border border-ink/15 px-4 text-[15px] font-medium placeholder:text-ink/35 bg-white" /></div>
+        <div><label for="q-zip" class="text-[13px] font-extrabold">ZIP Code</label><input id="q-zip" inputmode="numeric" maxlength="5" required placeholder="78701" class="field mt-1.5 w-full h-12 rounded-xl border border-ink/15 px-4 text-[15px] font-medium placeholder:text-ink/35 bg-white" /></div>
+        <div><label for="q-service" class="text-[13px] font-extrabold">Service Needed</label>
+          <select id="q-service" required class="field mt-1.5 w-full h-12 rounded-xl border border-ink/15 px-3 text-[15px] font-medium bg-white">
+            <option value="">Select…</option><option>Lawn Care</option><option>Pest Control</option><option>Tree Care</option><option>Multiple Services</option>
+          </select></div>
+        <div class="sm:col-span-2"><label for="q-msg" class="text-[13px] font-extrabold">Property / lawn notes <span class="font-semibold text-ink/45">(optional)</span></label>
+          <textarea id="q-msg" rows="3" placeholder="Gate code, pets, rough lawn size…" class="field mt-1.5 w-full rounded-xl border border-ink/15 px-4 py-3 text-[15px] font-medium placeholder:text-ink/35 bg-white resize-none"></textarea></div>
+        <div class="sm:col-span-2">
+          <button class="btn w-full bg-sunny hover:bg-[#e5b93c] font-extrabold rounded-full h-[52px] inline-flex items-center justify-center gap-2">Get My Free Quote
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <p id="quote-ok" class="hidden mt-3 text-center text-[14px] font-bold text-deep bg-fresh/15 border border-fresh/40 rounded-xl px-4 py-3">Thanks! A local specialist will reach out shortly.</p>
+          <p class="mt-3 text-center text-[13px] font-semibold text-ink/50">Free estimate. No obligation.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 07 RECENT WORK ================= -->
+<section id="work" class="py-14 lg:py-20">
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8">
+    <div class="rv max-w-[640px]">
+      <h2 class="text-[32px] sm:text-[52px] font-extrabold tracking-tight text-deep">Recently cared for.</h2>
+      <p class="mt-2 text-ink/60 text-[17px]">Real yards from neighborhoods we serve every week. Scroll — each project stacks over the last.</p>
+    </div>
+    <div class="mt-8 flex flex-col gap-6">
+      <article class="work-stack rv lg:sticky rounded-[28px] p-6 sm:p-10 grid lg:grid-cols-2 gap-6 lg:gap-10 items-center shadow-card border border-ink/10 lg:top-[100px]" style="background:#F6EEDC">
+        <div>
+          <p class="text-[12px] font-extrabold tracking-[.12em] text-[#5C8A45]">AUSTIN, TX — LAWN CARE</p>
+          <h3 class="mt-2 font-serif font-bold text-ink text-[30px] sm:text-[38px] leading-[1.08] tracking-tight">Green Lawn Makeover</h3>
+          <p class="mt-2 text-[15px] text-ink/60 leading-relaxed">Cleared weeds, fed tired soil and overseeded thin spots to bring this front lawn back to life.</p>
+          <p class="mt-5 flex flex-wrap items-center gap-2.5"><span class="font-serif font-bold text-[19px] text-ink">Details</span>
+            <span class="rounded-full bg-[#7CC46A] text-white text-[14px] font-extrabold px-4 py-1.5">$449</span>
+            <span class="rounded-full bg-deep text-white text-[14px] font-extrabold px-4 py-1.5">6 weeks</span></p>
+          <ul class="mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2.5 text-[14.5px] font-semibold text-ink/75">
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Weeds cleared</li>
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Soil fed &amp; balanced</li>
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Thin spots overseeded</li>
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Edges redefined</li>
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Mow stripes restored</li>
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Watering guide included</li>
+          </ul>
+        </div>
+        <div class="relative">
+          <div class="absolute -top-9 right-6 w-[92px] h-[92px] z-10" aria-hidden="true">
+            <svg class="spin-ring absolute inset-0 w-full h-full" viewBox="0 0 120 120">
+              <defs><path id="wb1" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+              <text class="badge-text"><textPath href="#wb1" textLength="284" lengthAdjust="spacingAndGlyphs">• BEST GARDENER • TOP RATED LAWN CARE</textPath></text>
+            </svg>
+            <span class="absolute inset-[28px] rounded-full bg-deep text-sunny grid place-items-center shadow-pop">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"/><path d="M12 13c0-3 2.5-6 6-6 0 3-2.5 6-6 6z"/><path d="M12 13c0-3-2.5-6-6-6 0 3 2.5 6 6 6z"/></svg>
+            </span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=900&q=80" alt="Front lawn restored with thick green grass and clean edges" class="w-full h-[240px] sm:h-[300px] lg:h-[340px] object-cover rounded-[20px]" loading="lazy" />
+        </div>
+      </article>
+      <article class="work-stack rv lg:sticky rounded-[28px] p-6 sm:p-10 grid lg:grid-cols-2 gap-6 lg:gap-10 items-center shadow-card border border-ink/10 lg:top-[100px]" style="background:#F6EEDC">
+        <div>
+          <p class="text-[12px] font-extrabold tracking-[.12em] text-[#5C8A45]">ROUND ROCK, TX — PEST CONTROL</p>
+          <h3 class="mt-2 font-serif font-bold text-ink text-[30px] sm:text-[38px] leading-[1.08] tracking-tight">Mosquito-Free Backyard</h3>
+          <p class="mt-2 text-[15px] text-ink/60 leading-relaxed">Barrier treatments and breeding-spot control that gave this family their summer evenings back.</p>
+          <p class="mt-5 flex flex-wrap items-center gap-2.5"><span class="font-serif font-bold text-[19px] text-ink">Details</span>
+            <span class="rounded-full bg-[#7CC46A] text-white text-[14px] font-extrabold px-4 py-1.5">$299</span>
+            <span class="rounded-full bg-deep text-white text-[14px] font-extrabold px-4 py-1.5">Same week</span></p>
+          <ul class="mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2.5 text-[14.5px] font-semibold text-ink/75">
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Breeding spots treated</li>
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Barrier mist applied</li>
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Tick zones covered</li>
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Patio edge sealed</li>
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Kid &amp; pet conscious</li>
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Free re-treatment check</li>
+          </ul>
+        </div>
+        <div class="relative">
+          <div class="absolute -top-9 right-6 w-[92px] h-[92px] z-10" aria-hidden="true">
+            <svg class="spin-ring absolute inset-0 w-full h-full" viewBox="0 0 120 120">
+              <defs><path id="wb2" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+              <text class="badge-text"><textPath href="#wb2" textLength="284" lengthAdjust="spacingAndGlyphs">• BEST GARDENER • TOP RATED LAWN CARE</textPath></text>
+            </svg>
+            <span class="absolute inset-[28px] rounded-full bg-deep text-sunny grid place-items-center shadow-pop">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="m9 11.5 2 2 4-4.5"/></svg>
+            </span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80" alt="Suburban backyard protected from mosquitoes and ticks" class="w-full h-[240px] sm:h-[300px] lg:h-[340px] object-cover rounded-[20px]" loading="lazy" />
+        </div>
+      </article>
+      <article class="work-stack rv lg:sticky rounded-[28px] p-6 sm:p-10 grid lg:grid-cols-2 gap-6 lg:gap-10 items-center shadow-card border border-ink/10 lg:top-[100px]" style="background:#F6EEDC">
+        <div>
+          <p class="text-[12px] font-extrabold tracking-[.12em] text-[#5C8A45]">CEDAR PARK, TX — TREE CARE</p>
+          <h3 class="mt-2 font-serif font-bold text-ink text-[30px] sm:text-[38px] leading-[1.08] tracking-tight">Tree &amp; Shrub Recovery</h3>
+          <p class="mt-2 text-[15px] text-ink/60 leading-relaxed">Deep-root feeding and insect protection that brought mature oaks and shrubs back to full health.</p>
+          <p class="mt-5 flex flex-wrap items-center gap-2.5"><span class="font-serif font-bold text-[19px] text-ink">Details</span>
+            <span class="rounded-full bg-[#7CC46A] text-white text-[14px] font-extrabold px-4 py-1.5">$549</span>
+            <span class="rounded-full bg-deep text-white text-[14px] font-extrabold px-4 py-1.5">2–3 visits</span></p>
+          <ul class="mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2.5 text-[14.5px] font-semibold text-ink/75">
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Full health inspection</li>
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Deep-root feeding</li>
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Insect protection</li>
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Disease treatment</li>
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Shaping &amp; pruning</li>
+            <li class="flex gap-2"><span class="text-fresh font-extrabold">✓</span> Seasonal checkup</li>
+          </ul>
+        </div>
+        <div class="relative">
+          <div class="absolute -top-9 right-6 w-[92px] h-[92px] z-10" aria-hidden="true">
+            <svg class="spin-ring absolute inset-0 w-full h-full" viewBox="0 0 120 120">
+              <defs><path id="wb3" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+              <text class="badge-text"><textPath href="#wb3" textLength="284" lengthAdjust="spacingAndGlyphs">• BEST GARDENER • TOP RATED LAWN CARE</textPath></text>
+            </svg>
+            <span class="absolute inset-[28px] rounded-full bg-deep text-sunny grid place-items-center shadow-pop">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M12 13v8"/><path d="M9 21h6"/></svg>
+            </span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=900&q=80" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80'" alt="Mature healthy trees after professional tree care" class="w-full h-[240px] sm:h-[300px] lg:h-[340px] object-cover rounded-[20px]" loading="lazy" />
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 08 WHY CHOOSE ================= -->
+<section class="pb-14 lg:pb-20">
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-10 items-center">
+    <div class="rv relative rounded-[28px] overflow-hidden shadow-pop order-2 lg:order-1">
+      <img id="why-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" alt="Family-friendly backyard with healthy lawn and beautiful suburban home" class="w-full h-[320px] sm:h-[440px] object-cover" loading="lazy" />
+      <div class="absolute inset-0 bg-gradient-to-t from-deep/45 via-transparent to-transparent"></div>
+      <div class="absolute bottom-5 left-5 bg-white/95 rounded-2xl px-5 py-3.5 shadow-card"><p class="font-extrabold text-deep">Satisfaction Guaranteed</p><p class="text-[13px] text-ink/55 font-semibold">We make it right, or we make it again.</p></div>
+    </div>
+    <div class="rv order-1 lg:order-2">
+      <h2 class="text-[32px] sm:text-[52px] font-extrabold tracking-tight text-deep leading-[1.08]">Professional care.<br/>Personal attention.</h2>
+      <div class="mt-7 grid sm:grid-cols-2 gap-3">
+        <div class="rv bg-white border border-ink/10 rounded-2xl p-5"><p class="text-[12px] font-extrabold text-fresh">01</p><p class="font-extrabold text-deep mt-1">Local Lawn Experts</p><p class="text-[14px] text-ink/60 mt-1">People who understand local weather, grass and property conditions.</p></div>
+        <div class="rv bg-white border border-ink/10 rounded-2xl p-5" style="transition-delay:80ms"><p class="text-[12px] font-extrabold text-fresh">02</p><p class="font-extrabold text-deep mt-1">Care Built Around Your Yard</p><p class="text-[14px] text-ink/60 mt-1">No one-size-fits-all treatment plans.</p></div>
+        <div class="rv bg-white border border-ink/10 rounded-2xl p-5" style="transition-delay:160ms"><p class="text-[12px] font-extrabold text-fresh">03</p><p class="font-extrabold text-deep mt-1">Reliable Scheduling</p><p class="text-[14px] text-ink/60 mt-1">Straightforward communication and dependable service.</p></div>
+        <div class="rv bg-white border border-ink/10 rounded-2xl p-5" style="transition-delay:240ms"><p class="text-[12px] font-extrabold text-fresh">04</p><p class="font-extrabold text-deep mt-1">Satisfaction Guaranteed</p><p class="text-[14px] text-ink/60 mt-1">If something isn’t right, we work to make it right.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 09 TESTIMONIALS ================= -->
+<section id="reviews" class="scroll-mt-28 bg-white border-y border-ink/10 py-14 lg:py-20">
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8">
+    <div class="rv text-center">
+      <p class="text-[12px] font-extrabold tracking-[.16em] text-fresh">HOMEOWNER STORIES</p>
+      <h2 class="mt-2 text-[32px] sm:text-[52px] font-extrabold tracking-tight text-deep">Loved by local homeowners.</h2>
+      <p class="mt-3 font-bold"><span class="text-[#E9A800]">★★★★★</span> 4.9 average Google rating</p>
+    </div>
+    <div class="rv relative mt-8">
+      <div id="t-track" class="flex gap-5 overflow-x-auto no-bar snap-x snap-mandatory pb-2">
+        <figure class="snap-center shrink-0 w-[86%] sm:w-[60%] lg:w-[52%] bg-cream border border-ink/10 rounded-[24px] p-7 sm:p-9">
+          <div class="text-sunny text-[18px]">★★★★★</div>
+          <blockquote class="mt-3 text-[19px] sm:text-[22px] leading-snug font-bold text-deep">“Our lawn looked noticeably healthier within the first few visits. The team shows up when they say they will and makes everything easy.”</blockquote>
+          <figcaption class="mt-5 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=96&q=80" alt="Megan R." class="w-11 h-11 rounded-full object-cover" loading="lazy" />
+            <span><span class="block font-extrabold">Megan R.</span><span class="block text-[13px] text-ink/55 font-semibold">Austin, TX • Lawn Care</span></span>
+          </figcaption>
+        </figure>
+        <figure class="snap-center shrink-0 w-[86%] sm:w-[42%] lg:w-[30%] bg-cream border border-ink/10 rounded-[24px] p-7">
+          <div class="text-sunny">★★★★★</div>
+          <blockquote class="mt-3 text-[15.5px] leading-relaxed text-ink/75">“Mosquitoes used to run us inside by 7pm. Now the kids play out back all evening.”</blockquote>
+          <figcaption class="mt-5 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=96&q=80" alt="James R." class="w-11 h-11 rounded-full object-cover" loading="lazy" />
+            <span><span class="block font-extrabold">James R.</span><span class="block text-[13px] text-ink/55 font-semibold">Round Rock, TX • Pest Control</span></span>
+          </figcaption>
+        </figure>
+        <figure class="snap-center shrink-0 w-[86%] sm:w-[42%] lg:w-[30%] bg-cream border border-ink/10 rounded-[24px] p-7">
+          <div class="text-sunny">★★★★★</div>
+          <blockquote class="mt-3 text-[15.5px] leading-relaxed text-ink/75">“Our crepe myrtles finally look full again. They explained everything in plain English.”</blockquote>
+          <figcaption class="mt-5 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=96&q=80" alt="Emily T." class="w-11 h-11 rounded-full object-cover" loading="lazy" />
+            <span><span class="block font-extrabold">Emily T.</span><span class="block text-[13px] text-ink/55 font-semibold">Cedar Park, TX • Tree Care</span></span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="mt-4 flex justify-center gap-2">
+        <button id="t-prev" aria-label="Previous review" class="w-11 h-11 rounded-full border border-ink/15 grid place-items-center hover:bg-deep hover:text-white transition">←</button>
+        <button id="t-next" aria-label="Next review" class="w-11 h-11 rounded-full border border-ink/15 grid place-items-center hover:bg-deep hover:text-white transition">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 10 FAQ ================= -->
+<section id="faq" class="scroll-mt-28 py-14 lg:py-20">
+  <div class="max-w-[820px] mx-auto px-5 sm:px-8">
+    <div class="rv text-center">
+      <h2 class="text-[32px] sm:text-[52px] font-extrabold tracking-tight text-deep">Questions?<br/>We’ve got answers.</h2>
+    </div>
+    <div class="rv mt-8 space-y-3" id="faq-list">
+      <div class="faq-item bg-white border border-ink/10 rounded-2xl transition-colors">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-4 font-extrabold text-[15.5px] text-deep">What lawn care services do you provide?<span class="faq-plus shrink-0 w-8 h-8 rounded-full bg-cream grid place-items-center text-[18px]">+</span></button>
+        <div class="faq-a"><div><p class="px-5 sm:px-6 pb-5 text-[14.5px] text-ink/65">Mowing and edging, fertilization, weed control, aeration and overseeding, plus seasonal treatments — all scheduled around your yard and the local growing season.</p></div></div>
+      </div>
+      <div class="faq-item bg-white border border-ink/10 rounded-2xl transition-colors">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-4 font-extrabold text-[15.5px] text-deep">How often should my lawn be treated?<span class="faq-plus shrink-0 w-8 h-8 rounded-full bg-cream grid place-items-center text-[18px]">+</span></button>
+        <div class="faq-a"><div><p class="px-5 sm:px-6 pb-5 text-[14.5px] text-ink/65">Most lawns do best on a recurring plan — typically every 4–8 weeks during the growing season. Your specialist will recommend a schedule after seeing your yard.</p></div></div>
+      </div>
+      <div class="faq-item bg-white border border-ink/10 rounded-2xl transition-colors">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-4 font-extrabold text-[15.5px] text-deep">Do you offer mosquito and tick control?<span class="faq-plus shrink-0 w-8 h-8 rounded-full bg-cream grid place-items-center text-[18px]">+</span></button>
+        <div class="faq-a"><div><p class="px-5 sm:px-6 pb-5 text-[14.5px] text-ink/65">Yes. Our pest control covers mosquitoes, ticks and grubs, plus perimeter treatments that help keep pests away from patios, play areas and doorways.</p></div></div>
+      </div>
+      <div class="faq-item bg-white border border-ink/10 rounded-2xl transition-colors">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-4 font-extrabold text-[15.5px] text-deep">What does your tree and shrub care include?<span class="faq-plus shrink-0 w-8 h-8 rounded-full bg-cream grid place-items-center text-[18px]">+</span></button>
+        <div class="faq-a"><div><p class="px-5 sm:px-6 pb-5 text-[14.5px] text-ink/65">Root-zone fertilization, insect protection, disease management and seasonal checkups that keep trees and shrubs healthy and looking their best.</p></div></div>
+      </div>
+      <div class="faq-item bg-white border border-ink/10 rounded-2xl transition-colors">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-4 font-extrabold text-[15.5px] text-deep">Do I need to be home during service?<span class="faq-plus shrink-0 w-8 h-8 rounded-full bg-cream grid place-items-center text-[18px]">+</span></button>
+        <div class="faq-a"><div><p class="px-5 sm:px-6 pb-5 text-[14.5px] text-ink/65">No. As long as we have access to the yard, we’ll handle the visit and leave a summary of what was done, including any gates or pets to note.</p></div></div>
+      </div>
+      <div class="faq-item bg-white border border-ink/10 rounded-2xl transition-colors">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-4 font-extrabold text-[15.5px] text-deep">How does the free quote work?<span class="faq-plus shrink-0 w-8 h-8 rounded-full bg-cream grid place-items-center text-[18px]">+</span></button>
+        <div class="faq-a"><div><p class="px-5 sm:px-6 pb-5 text-[14.5px] text-ink/65">Enter your ZIP code or send the short form and a local specialist will confirm your service area, review your yard’s needs and recommend the right plan — free, with no obligation.</p></div></div>
+      </div>
+      <div class="faq-item bg-white border border-ink/10 rounded-2xl transition-colors">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-4 font-extrabold text-[15.5px] text-deep">Are LawnHero services guaranteed?<span class="faq-plus shrink-0 w-8 h-8 rounded-full bg-cream grid place-items-center text-[18px]">+</span></button>
+        <div class="faq-a"><div><p class="px-5 sm:px-6 pb-5 text-[14.5px] text-ink/65">Yes — 100%. If something isn’t right after a visit, tell us and we’ll come back and make it right.</p></div></div>
+      </div>
+      <div class="faq-item bg-white border border-ink/10 rounded-2xl transition-colors">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-5 sm:px-6 py-4 font-extrabold text-[15.5px] text-deep">Do you service my ZIP code?<span class="faq-plus shrink-0 w-8 h-8 rounded-full bg-cream grid place-items-center text-[18px]">+</span></button>
+        <div class="faq-a"><div><p class="px-5 sm:px-6 pb-5 text-[14.5px] text-ink/65">We serve Austin, Round Rock, Cedar Park and nearby communities. Pop your ZIP in the quote box and we’ll confirm instantly.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 11 FINAL CTA ================= -->
+<section class="bg-deep text-white overflow-hidden">
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8 py-14 lg:py-20 grid lg:grid-cols-[1.1fr_.9fr] gap-10 items-center">
+    <div class="rv">
+      <h2 class="text-[34px] sm:text-[54px] font-extrabold tracking-tight leading-[1.06]">Your best lawn<br/>starts right here.</h2>
+      <p class="mt-4 text-white/70 text-[17px] max-w-[480px]">Professional lawn, pest and tree care from local experts who make taking care of your yard easy.</p>
+      <form data-zip-form class="mt-6 max-w-[520px] flex flex-col sm:flex-row gap-2 bg-white rounded-[22px] sm:rounded-full p-2" aria-label="Final quote by ZIP">
+        <label for="foot-zip" class="sr-only">Enter ZIP code</label>
+        <input id="foot-zip" data-zip-input inputmode="numeric" maxlength="5" placeholder="Enter ZIP code" class="flex-1 h-[52px] px-5 bg-transparent outline-none text-ink text-[16px] font-semibold placeholder:text-ink/40 placeholder:font-medium" />
+        <button class="btn bg-sunny hover:bg-[#e5b93c] text-ink font-extrabold rounded-2xl sm:rounded-full px-7 h-[52px] inline-flex items-center justify-center gap-2 whitespace-nowrap">Get Free Quote
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+      <p data-zip-error class="hidden mt-2 text-[13px] font-bold text-sunny">Please enter a valid 5-digit ZIP.</p>
+      <p class="mt-4 text-white/70 font-semibold">Or call <a href="tel:+15125550184" class="text-sunny font-extrabold underline underline-offset-4">(512) 555-0184</a></p>
+    </div>
+    <div class="rv relative hidden lg:block">
+      <div class="absolute -right-24 top-1/2 -translate-y-1/2 w-[480px] h-[480px] rounded-full overflow-hidden border-[10px] border-white/10 shadow-pop">
+        <img id="cta-img" src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=900&q=80" alt="Lush green lawn" class="w-full h-full object-cover" loading="lazy" />
+      </div>
+      <div class="h-[380px]"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= 12 FOOTER ================= -->
+<footer class="relative overflow-hidden text-white bg-deep">
+  <div class="absolute inset-0" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1800&q=80" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1800&q=80'" alt="" loading="lazy" class="w-full h-full object-cover opacity-40" />
+    <div class="absolute inset-0 bg-gradient-to-b from-deep via-deep/80 to-deep/90"></div>
+  </div>
+  <div class="relative max-w-[1320px] mx-auto px-5 sm:px-8 py-12 grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+    <div>
+      <p class="flex items-center gap-2">
+        <span class="w-10 h-10 rounded-2xl bg-white grid place-items-center">
+          <svg class="w-5 h-5 text-deep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"/><path d="M12 13c0-3 2.5-6 6-6 0 3-2.5 6-6 6z"/><path d="M12 13c0-3-2.5-6-6-6 0 3 2.5 6 6 6z"/></svg>
+        </span>
+        <span class="text-[22px] font-extrabold tracking-tight">Lawn<span class="text-fresh">Hero</span></span>
+      </p>
+      <p class="mt-3 text-[14px] text-white/60 max-w-[300px]">Local lawn, pest and tree care for healthier outdoor spaces.</p>
+      <div class="mt-4 flex gap-2.5">
+        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/10 grid place-items-center hover:bg-fresh transition font-extrabold">f</a>
+        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 grid place-items-center hover:bg-fresh transition">◍</a>
+        <a href="#" aria-label="Google" class="w-9 h-9 rounded-full bg-white/10 grid place-items-center hover:bg-fresh transition font-extrabold">G</a>
+      </div>
+    </div>
+    <nav aria-label="Services"><p class="text-[12px] font-extrabold tracking-[.14em] text-white/45">SERVICES</p>
+      <ul class="mt-3 space-y-2.5 text-[14.5px] font-semibold text-white/80"><li><a href="#services" class="hover:text-white">Lawn Care</a></li><li><a href="#services" class="hover:text-white">Pest Control</a></li><li><a href="#services" class="hover:text-white">Tree Care</a></li></ul></nav>
+    <nav aria-label="Company"><p class="text-[12px] font-extrabold tracking-[.14em] text-white/45">COMPANY</p>
+      <ul class="mt-3 space-y-2.5 text-[14.5px] font-semibold text-white/80"><li><a href="#about" class="hover:text-white">About</a></li><li><a href="#results" class="hover:text-white">Results</a></li><li><a href="#reviews" class="hover:text-white">Reviews</a></li><li><a href="#faq" class="hover:text-white">FAQ</a></li></ul></nav>
+    <div><p class="text-[12px] font-extrabold tracking-[.14em] text-white/45">CONTACT</p>
+      <ul class="mt-3 space-y-2.5 text-[14.5px] font-semibold text-white/80">
+        <li><a href="tel:+15125550184" class="hover:text-white">(512) 555-0184</a></li>
+        <li><a href="mailto:hello@lawnhero.com" class="hover:text-white">hello@lawnhero.com</a></li>
+        <li class="text-white/55 font-medium">Serving: Austin, Round Rock, Cedar Park &amp; nearby communities</li>
+      </ul></div>
+  </div>
+  <div class="relative border-t border-white/10">
+    <div class="max-w-[1320px] mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row justify-between gap-2 text-[13px] text-white/50 font-medium">
+      <p>© 2026 LawnHero</p><p class="flex gap-5"><a href="#" class="hover:text-white">Privacy</a><a href="#" class="hover:text-white">Terms</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+/* ============================================================
+   LawnHero — custom stylesheet
+   Brand: Deep #173F2B / Fresh #57A83E / Cream #F7F5EC
+   Sunny #F4C84A / Ink #10251A / Manrope + Fraunces
+   (Layout utilities come from Tailwind CDN.)
+   ============================================================ */
+
+body{font-family:'Manrope',system-ui,sans-serif;background:#F7F5EC;color:#10251A}
+::selection{background:#57A83E;color:#fff}
+
+/* ---------- header ---------- */
+#site-header{transition:background-color .3s,box-shadow .3s,backdrop-filter .3s}
+#site-header .bar{transition:padding .3s}
+#site-header.scrolled{background:transparent}
+#site-header.scrolled .bar{padding-top:.55rem;padding-bottom:.55rem}
+/* header — light cream, always readable over light hero */
+#site-header{background:transparent;color:#10251A}
+#site-header .logo-word{color:#173F2B}
+#site-header .logo-word .logo-hero{color:#57A83E}
+#site-header .nav-link{color:rgba(16,37,26,.7)}
+#site-header .nav-link:hover{color:#173F2B}
+#site-header .phone-pill{background:#fff;border-color:#173F2B}
+#site-header .phone-pill .pl{color:rgba(16,37,26,.5)}
+#site-header .phone-pill .pn{color:#173F2B}
+#site-header .menu-btn{background:rgba(255,255,255,.7);border-color:rgba(16,37,26,.15);color:#10251A}
+.nav-link{position:relative;transition:color .2s}
+.nav-link::after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:2px;border-radius:2px;background:#57A83E;transition:right .25s cubic-bezier(.22,1,.36,1)}
+.nav-link:hover{color:#173F2B}.nav-link:hover::after{right:0}
+
+/* ---------- hero entrance ---------- */
+@keyframes navIn{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-floral{position:absolute;inset:0;pointer-events:none;opacity:.6;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23173F2B' stroke-opacity='.10'%3E%3Ccircle cx='90' cy='90' r='44'/%3E%3Ccircle cx='90' cy='90' r='30'/%3E%3Ccircle cx='90' cy='90' r='16'/%3E%3Cpath d='M90 20v20M90 140v20M20 90h20M140 90h20'/%3E%3C/g%3E%3C/svg%3E");mask-image:linear-gradient(to bottom,#000 0%,transparent 62%);-webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 62%);}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.floaty{animation:floaty 6s ease-in-out infinite}
+.floaty2{animation:floaty 6s ease-in-out 3s infinite}
+.anim-nav{animation:navIn .6s cubic-bezier(.22,1,.36,1) both}
+.mask{display:block;overflow:hidden}
+.mask>span{display:block;transform:translateY(110%);opacity:.2;animation:maskUp .8s cubic-bezier(.22,1,.36,1) forwards}
+.mask.d1>span{animation-delay:.15s}.mask.d2>span{animation-delay:.23s}
+@keyframes maskUp{to{transform:none;opacity:1}}
+.a-fade{opacity:0;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) forwards}
+
+/* ---------- scroll reveals ---------- */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
+.rv-mask{display:block;overflow:hidden}
+.rv-mask>span{display:block;transform:translateY(105%);opacity:.2;transition:transform .7s cubic-bezier(.22,1,.36,1),opacity .7s}
+.in .rv-mask>span,.rv-mask.in>span{transform:none;opacity:1}
+
+/* ---------- marquee ---------- */
+@keyframes marquee{to{transform:translateX(-50%)}}
+#logo-track{animation:marquee 30s linear infinite}
+#logo-track:hover{animation-play-state:paused}
+
+/* ---------- buttons ---------- */
+.btn{transition:transform .2s,background-color .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{transition:transform .2s}
+.btn:hover svg{transform:translateX(4px)}
+
+/* ---------- services: simple white cards ---------- */
+.svc-simple{transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease}
+.svc-simple:hover{transform:translateY(-4px);box-shadow:0 20px 45px -18px rgba(16,37,26,.28)}
+
+/* ---------- stacked work cards ---------- */
+.work-stack{transform-origin:center top}
+
+/* ---------- before/after ---------- */
+#ba-before{clip-path:inset(0 50% 0 0)}
+.ba-filtered{filter:sepia(.55) saturate(.55) brightness(.82) contrast(.95)}
+
+/* ---------- carousel ---------- */
+.no-bar{scrollbar-width:none}.no-bar::-webkit-scrollbar{display:none}
+
+/* ---------- faq ---------- */
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s cubic-bezier(.22,1,.36,1)}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-a>div{overflow:hidden}
+.faq-plus{transition:transform .3s}
+.faq-item.open .faq-plus{transform:rotate(45deg)}
+.faq-item.open{border-color:#57A83E}
+
+/* ---------- rotating badge ring ---------- */
+@keyframes spin{to{transform:rotate(360deg)}}
+.spin-ring{animation:spin 18s linear infinite;transform-origin:50% 50%}
+.badge-text{font-size:11px;font-weight:800;letter-spacing:1.5px;fill:#173F2B;font-family:'Manrope',sans-serif}
+
+/* ---------- about: Lassie-style growing circles ---------- */
+.grow-img{opacity:0;transform:scale(.15);will-change:transform,opacity}
+
+/* ---------- forms ---------- */
+.field{transition:border-color .2s,box-shadow .2s}
+.field:focus{outline:none;border-color:#57A83E!important;box-shadow:0 0 0 3px rgba(87,168,62,.25)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .mask>span,.rv,.rv-mask>span,.a-fade{opacity:1!important;transform:none!important}
+  .floaty,.floaty2,.spin-ring{animation:none!important}
+  #logo-track{animation:none}
+}
